@@ -142,85 +142,85 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider>
           <KeyboardShortcutsProvider>
             <I18nProvider>
-            <WalletProvider>
-            <ToastProvider>
-            <SWRErrorToastConfig>
-              <SkipToContent />
-              <TopProgressBar />
-              <SessionTimeoutBanner />
-              <NetworkMismatchBanner />
-              <OfflineBanner />
-              {/* Top utility nav — hidden when printing */}
-              <nav
-                className="flex gap-4 px-6 py-3 text-sm border-b no-print"
-                aria-label="Utility navigation"
-                data-print="hide"
-                style={{
-                  borderColor: 'var(--color-nav-border)',
-                  backgroundColor: 'var(--color-nav-bg)',
-                }}
-              >
-                <Link
-                  href="/"
-                  className="font-semibold hover:opacity-70 transition"
-                  style={{ color: 'var(--color-text)' }}
-                >
-                  StellarKraal
-                </Link>
-                <span className="flex-1" />
-                <Link
-                  href="/loans"
-                  className="hover:opacity-100 transition"
-                  style={{ color: 'var(--color-text-muted)' }}
-                >
-                  Loans
-                </Link>
-                <Link
-                  href="/collateral"
-                  className="hover:opacity-100 transition"
-                  style={{ color: 'var(--color-text-muted)' }}
-                >
-                  Collateral
-                </Link>
-                <Link
-                  href="/transactions"
-                  className="hover:opacity-100 transition"
-                  style={{ color: 'var(--color-text-muted)' }}
-                >
-                  Transactions
-                </Link>
-                <Link
-                  href="/help/faq"
-                  className="hover:opacity-100 transition"
-                  style={{ color: 'var(--color-text-muted)' }}
-                >
-                  FAQ
-                </Link>
-                <Link
-                  href="/profile"
-                  className="hover:opacity-100 transition"
-                  style={{ color: 'var(--color-text-muted)' }}
-                >
-                  Profile
-                </Link>
-                <Link
-                  href="/settings"
-                  className="hover:opacity-100 transition"
-                  style={{ color: 'var(--color-text-muted)' }}
-                >
-                  Settings
-                </Link>
-              </nav>
-              <Navbar />
-              <MobileBottomNav />
-              <main id="main-content" className="pb-20 md:pb-0">
-                {children}
-              </main>
-              <ToastContainer />
-              <WhatsNewProvider />
-            </SWRErrorToastConfig>
-            </ToastProvider>
-            </WalletProvider>
+              <WalletProvider>
+                <ToastProvider>
+                  <SWRErrorToastConfig>
+                    <SkipToContent />
+                    <TopProgressBar />
+                    <SessionTimeoutBanner />
+                    <NetworkMismatchBanner />
+                    <OfflineBanner />
+                    {/* Top utility nav — hidden when printing */}
+                    <nav
+                      className="hidden md:flex gap-4 px-6 py-3 text-sm border-b no-print"
+                      aria-label="Utility navigation"
+                      data-print="hide"
+                      style={{
+                        borderColor: 'var(--color-nav-border)',
+                        backgroundColor: 'var(--color-nav-bg)',
+                      }}
+                    >
+                      <Link
+                        href="/"
+                        className="font-semibold hover:opacity-70 transition"
+                        style={{ color: 'var(--color-text)' }}
+                      >
+                        StellarKraal
+                      </Link>
+                      <span className="flex-1" />
+                      <Link
+                        href="/loans"
+                        className="hover:opacity-100 transition"
+                        style={{ color: 'var(--color-text-muted)' }}
+                      >
+                        Loans
+                      </Link>
+                      <Link
+                        href="/collateral"
+                        className="hover:opacity-100 transition"
+                        style={{ color: 'var(--color-text-muted)' }}
+                      >
+                        Collateral
+                      </Link>
+                      <Link
+                        href="/transactions"
+                        className="hover:opacity-100 transition"
+                        style={{ color: 'var(--color-text-muted)' }}
+                      >
+                        Transactions
+                      </Link>
+                      <Link
+                        href="/help/faq"
+                        className="hover:opacity-100 transition"
+                        style={{ color: 'var(--color-text-muted)' }}
+                      >
+                        FAQ
+                      </Link>
+                      <Link
+                        href="/profile"
+                        className="hover:opacity-100 transition"
+                        style={{ color: 'var(--color-text-muted)' }}
+                      >
+                        Profile
+                      </Link>
+                      <Link
+                        href="/settings"
+                        className="hover:opacity-100 transition"
+                        style={{ color: 'var(--color-text-muted)' }}
+                      >
+                        Settings
+                      </Link>
+                    </nav>
+                    <Navbar />
+                    <MobileBottomNav />
+                    <main id="main-content" className="pb-20 md:pb-0">
+                      {children}
+                    </main>
+                    <ToastContainer />
+                    <WhatsNewProvider />
+                  </SWRErrorToastConfig>
+                </ToastProvider>
+              </WalletProvider>
             </I18nProvider>
           </KeyboardShortcutsProvider>
         </ThemeProvider>
