@@ -40,52 +40,25 @@ variable "slack_webhook_url" {
   default     = ""
 }
 
-# --- Monitoring / alarms (issue #1416) ---
-
-variable "ecs_cpu_threshold" {
-  description = "ECS service CPU utilization (%) that triggers an alarm"
-  type        = number
-  default     = 80
-}
-
-variable "ecs_memory_threshold" {
-  description = "ECS service memory utilization (%) that triggers an alarm"
-  type        = number
-  default     = 80
-}
-
-variable "rds_free_storage_threshold_gb" {
-  description = "RDS free storage (GB) below which an alarm fires"
-  type        = number
-  default     = 2
-}
-
-variable "rds_max_connections_threshold" {
-  description = "RDS connection count above which an alarm fires"
-  type        = number
-  default     = 80
-}
-
-variable "backend_5xx_rate_threshold" {
-  description = "Backend 5xx error rate (% of requests) that triggers an alarm"
-  type        = number
-  default     = 1
-}
-
-variable "alb_arn_suffix" {
-  description = "ARN suffix of the ALB in front of the backend (e.g. app/stellarkraal-alb/abc123). The 5xx alarm is skipped when empty."
+variable "backup_bucket_name" {
+  description = "Name of the S3 bucket used to store backups"
   type        = string
-  default     = ""
 }
 
-variable "slack_team_id" {
-  description = "Slack workspace (team) ID authorized in AWS Chatbot. Slack delivery is skipped when empty."
-  type        = string
-  default     = ""
+variable "backup_transition_days" {
+  description = "Number of days before backup objects transition to STANDARD_IA"
+  type        = number
+  default     = 30
 }
 
-variable "slack_oncall_channel_id" {
-  description = "Slack channel ID of the on-call channel that receives alarm notifications"
+variable "backup_expiration_days" {
+  description = "Number of days before backup objects expire"
+  type        = number
+  default     = 90
+}
+
+variable "backup_kms_key_arn" {
+  description = "Optional KMS key ARN for S3 server-side encryption; when empty, AES-256 (SSE-S3) is used"
   type        = string
   default     = ""
 }
